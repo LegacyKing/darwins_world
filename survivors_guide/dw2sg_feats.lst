@@ -95,7 +95,8 @@ Weapon Focus.MOD				TYPE:PAHero.Psionic.Raider
 Whirlwind Attack.MOD			TYPE:WarriorMonk
 
 #Monster Feats
-Snatch.MOD																									PRE:.CLEAR
+#Not sure why this is here, but it causes an error on data load
+#Snatch.MOD																									PRE:.CLEAR
 
 ###Block: DW2 Feats
 # Feat Name					Type											Visible	Required Ability					Required Feat										Required Lvl	Required Skill																		Required Stat	Prohibited Stat	Description		Auto Weapon Prof					Bonus to skill				Class Skill		Source Page
