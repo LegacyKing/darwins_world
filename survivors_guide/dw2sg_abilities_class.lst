@@ -1,6 +1,5 @@
-# CVS $Revision: 25130 $ $Author: amaitland $ -- Wed Sep  3 00:18:24 2014 -- reformated by prettylst.pl v1.51 (build 24947)
+# CVS $Revision: 25136 $ $Author: amaitland $ -- Mon Sep 15 21:55:54 2014 -- reformated by prettylst.pl v1.51 (build 25129)
 SOURCELONG:Darwin's World 2nd Edition - Survivor's Guide (v2.5)	SOURCESHORT:DW2_SG	SOURCEWEB:http://www.rpgobjects.com/index.php?page=dw	SOURCEDATE:2006-01
-#Original Entry by Arknight
 
 ###Block: PA Hero Talents
 # Ability Name		Category of Ability	Type						Visible	Required Ability																										Required Feat					Required Skill					Required Template		Description																	Stackable?	Multiple?	Choose			Combat bonus			Bonus to skill										Modify VAR												Weapon prof. bonus				Source Page
@@ -89,6 +88,93 @@ Superior Combat Expertise		CATEGORY:Talent		TYPE:Talent.WMSuperior	VISIBLE:YES		
 # Ability Name	Category of Ability	Type							Visible	Special ABility		Define				Allow Follower			Allowed Companions
 Animal Partner	CATEGORY:Talent		TYPE:Talent.SymbioteTalent.AnimalPartner	VISIBLE:YES	SAB:Animal Partner (Ex)	DEFINE:AnimalCompanionLVL|0	FOLLOWERS:Animal Partner|1	COMPANIONLIST:Animal Partner|RACETYPE=Animal	COMPANIONLIST:Animal Partner|Cynemie,Desert Horse,Fraxx Steed,Grunt,Lurking Panther,Rad Wolf,Ravening Hound,Snoffle Hog,Two Headed Mutant Bear
 
-#
-## EOF
-#
+
+
+###Block: Advanced Classes
+Rage				CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Barbarian Class Feature		KEY:Barbarian ~ 	SAB:Rage (Ex) % times/day (% rounds)|RageTimes|RageDuration	SAB:Bonuses when enraged (STR +%, CON +%, Will +%, AC -%, HP %)|RageStrBonus|RageConBonus|RageMorale|RageACPenalty|(RageConBonus/2)*(TL+HD)|PREVARNEQ:Enraged,1	DEFINE:RageDuration|0	DEFINE:RageConBonus|0	DEFINE:RageStrBonus|0	DEFINE:RageACPenalty|0	DEFINE:RageMorale|0	DEFINE:Enraged|0	DEFINE:RageBonus|0	BONUS:VAR|RageBonus|4	BONUS:VAR|RageDuration|CON+3+(RageConBonus/2)	BONUS:VAR|RageConBonus|RageBonus	BONUS:VAR|RageStrBonus|RageBonus	BONUS:VAR|RageACPenalty|2	BONUS:VAR|RageMorale|RageBonus/2	TEMPBONUS:PC|SAVE|Will|RageMorale	TEMPBONUS:PC|COMBAT|AC|-1*RageACPenalty	TEMPBONUS:PC|STAT|CON|RageConBonus	TEMPBONUS:PC|STAT|STR|RageStrBonus	TEMPBONUS:PC|VAR|RageDuration|-(RageConBonus/2)	TEMPBONUS:PC|VAR|Enraged|1
+Junk Armor			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Barbarian Class Feature		KEY:Barbarian ~ Junk Armor					
+Junk Weapon			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Barbarian Class Feature		KEY:Barbarian ~ Junk Weapon					
+Junk Mastery		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Barbarian Class Feature		KEY:Barbarian ~ Junk Mastery					
+
+Followers			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Demagogue Class Feature		KEY:Demagogue ~ Followers					
+Lead Followers		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Demagogue Class Feature		KEY:Demagogue ~ Lead Followers				
+Zealots			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Demagogue Class Feature		KEY:Demagogue ~ Zealots						
+Captivate Masses		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Demagogue Class Feature		KEY:Demagogue ~ Captivate Masses				
+Conversion			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Demagogue Class Feature		KEY:Demagogue ~ Conversion					
+Improved Zealots		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Demagogue Class Feature		KEY:Demagogue ~ Improved Zealots				
+Mass Conversion		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Demagogue Class Feature		KEY:Demagogue ~ Mass Conversion				
+
+Defender			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Guardian Class Feature			KEY:Guardian ~ Defender								ASPECT:NAME|Defender (+%1)|defendLvl										BONUS:VAR|defendLvl|2	DEFINE:defendLvl|0		BONUS:VAR|defendLvl|2|PRECLASS:1,Guardian=7
+Tactical Aid		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Guardian Class Feature			KEY:Guardian ~ Tactical Aid												BONUS:VAR|tactAid|1	DEFINE:tactAid|0
+Raider Bane			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Guardian Class Feature			KEY:Guardian ~ Raider Bane							
+
+Juju Specialist		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Juju Doctor Class Feature		KEY:Juju Doctor ~ Juju Specialist					ASPECT:NAME|Juju Specialist (+%1)|jujuSpec																BONUS:SKILL|Treat Injury|jujuSpec	BONUS:VAR|jujuSpec|1	DEFINE:jujuSpec|0		BONUS:VAR|jujuSpec|1|PRECLASS:1,Juju Doctor=5	BONUS:VAR|jujuSpec|1|PRECLASS:1,Juju Doctor=8
+Brew Potion			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Juju Doctor Class Feature		KEY:Juju Doctor ~ Brew Potion				
+Expert Healer		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Juju Doctor Class Feature		KEY:Juju Doctor ~ Expert Healer			
+Juju Mastery		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Juju Doctor Class Feature		KEY:Juju Doctor ~ Juju Mastery			
+Potion Mastery		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Juju Doctor Class Feature		KEY:Juju Doctor ~ Potion Mastery			
+Juju Miracle		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Juju Doctor Class Feature		KEY:Juju Doctor ~ Juju Miracle			
+
+Neural Specialization	CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Psionic Class Feature			KEY:Psionic ~ Neural Specialization					DESC:(+%1 to DC of Neural Mutations used)|(CL/2)
+
+Chaps and Chains		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Raider Class Feature			KEY:Raider ~ Chaps and Chains						ASPECT:NAME|Chaps and Chains (+%)|chapchain								BONUS:VAR|chapchain|1	DEFINE:chapchain|0	BONUS:VAR|chapchain|1|PRECLASS:1,Raider=4	BONUS:VAR|chapchain|1|PRECLASS:1,Raider=8
+Bloodthirsty Cry		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Raider Class Feature			KEY:Raider ~ Bloodthirsty Cry				
+Horrifying Kill		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Raider Class Feature			KEY:Raider ~ Horrifying Kill				
+No Survivors		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Raider Class Feature			KEY:Raider ~ No Survivors				
+Death Cry			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Raider Class Feature			KEY:Raider ~ Death Cry					
+
+Boarding Party		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Road Warrior Class Feature		KEY:Road Warrior ~ Boarding Party			
+Offensive Driving		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Road Warrior Class Feature		KEY:Road Warrior ~ Offensive Driving		
+Vehicular Evasion		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Road Warrior Class Feature		KEY:Road Warrior ~ Vehicular Evasion		
+Master Mechanic		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Road Warrior Class Feature		KEY:Road Warrior ~ Master Mechanic									BONUS:SKILL|Repair|4|TYPE=Competence
+Improved Sideswipe	CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Road Warrior Class Feature		KEY:Road Warrior ~ Improved Sideswipe		
+Improved Hardness		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Road Warrior Class Feature		KEY:Road Warrior ~ Improved Hardness		
+Improved Ramming		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Road Warrior Class Feature		KEY:Road Warrior ~ Improved Ramming			
+
+Scav Scan			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Scav Class Feature			KEY:Scav ~ Scav Scan					
+Sneak Attack		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Scav Class Feature			KEY:Scav ~ Sneak Attack				ABILITY:Special Ability|AUTOMATIC|Sneak Attack	BONUS:VAR|SneakAttackDice|(cl("Scav")+1)
+Scav Survival		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Scav Class Feature			KEY:Scav ~ Scav Survival				
+Feign Death			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Scav Class Feature			KEY:Scav ~ Feign Death					
+Shadow in the Open	CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Scav Class Feature			KEY:Scav ~ Shadow in the Open				
+
+Gossip			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Scholar Class Feature			KEY:Scholar ~ Gossip						ASPECT:NAME|Gossip (%1%%)|(50+CHASCORE)
+Confusing Tirade		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Scholar Class Feature			KEY:Scholar ~ Confusing Tirade				
+Protected By Code		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Scholar Class Feature			KEY:Scholar ~ Protected By Code				
+
+Sweep				CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Skulk Class Feature			KEY:Skulk ~ Sweep							
+Sneak Attack		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Skulk Class Feature			KEY:Skulk ~ Sneak Attack			ABILITY:Special Ability|AUTOMATIC|Sneak Attack		BONUS:VAR|SneakAttackDice|(SkulkLVL+1)/3
+Improved Sweep		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Skulk Class Feature			KEY:Skulk ~ Improved Sweep					
+Without a Trace		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Skulk Class Feature			KEY:Skulk ~ Without a Trace					
+
+Persuade			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Sister of the Desert Class Feature	KEY:Sister of the Desert ~ Persuade					DESC: (Will Save (DC:%1))|(10+CL+CHA)
+Natural Healing		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Sister of the Desert Class Feature	KEY:Sister of the Desert ~ Natural Healing			
+Go For The "Eyes"		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Sister of the Desert Class Feature	KEY:Sister of the Desert ~ Go For The "Eyes"			
+Fascinate			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Sister of the Desert Class Feature	KEY:Sister of the Desert ~ Fascinate				DESC:(Will Save (DC:%1))|(10+CL+CHA)
+Inspire Rebellion		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Sister of the Desert Class Feature	KEY:Sister of the Desert ~ Inspire Rebellion			
+Male Fear			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Sister of the Desert Class Feature	KEY:Sister of the Desert ~ Male Fear				DESC:(Will Save (DC:%1))|(10+(CL/2)+CHA)
+Leave No One Behind	CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Sister of the Desert Class Feature	KEY:Sister of the Desert ~ Leave No One Behind			
+
+Called Shot			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Survivalist Class Feature		KEY:Survivalist ~ Called Shot						ASPECT:NAME|Called Shot (+%1d%2)|CSdmg|CSdie						BONUS:VAR|CSdmg|1+(SurvivalistLVL/5)				BONUS:VAR|CSdie|6	DEFINE:CSdmg|0	DEFINE:CSdie|0
+Hunter			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Survivalist Class Feature		KEY:Survivalist ~ Hunter						
+Superior Camouflage	CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Survivalist Class Feature		KEY:Survivalist ~ Superior Camouflage				
+
+Opportunist			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Symbiote Class Feature			KEY:Symbiote ~ Opportunist					
+Bond of Friendship	CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Symbiote Class Feature			KEY:Symbiote ~ Bond of Friendship				
+Ranged Opportunist	CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Symbiote Class Feature			KEY:Symbiote ~ Ranged Opportunist				
+
+Jury-Rig			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Tinker Class Feature			KEY:Tinker ~ Jury-Rig						ASPECT:NAME|Jury-Rig (+%1)|juryRig									BONUS:VAR|JuryRigBonus|2	DEFINE:JuryRigBonus|0	BONUS:VAR|JuryRigBonus|2|PRECLASS:1,Tinker=7
+Tinkering			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Tinker Class Feature			KEY:Tinker ~ Tinkering						
+Tech Weapon			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Tinker Class Feature			KEY:Tinker ~ Tech Weapon					
+Tinkercraft			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Tinker Class Feature			KEY:Tinker ~ Tinkercraft					
+Smart Weapon		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Tinker Class Feature			KEY:Tinker ~ Smart Weapon					
+Improved Tinkering	CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Tinker Class Feature			KEY:Tinker ~ Improved Tinkering				
+
+Ear to the Ground			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Trader Class Feature			KEY:Trader ~ Ear to the Ground									BONUS:SKILL|Gather Information|4|TYPE=Competence
+Money Talks				CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Trader Class Feature			KEY:Trader ~ Money Talks					
+Going Once Going Twice		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Trader Class Feature			KEY:Trader ~ Going Once Going Twice					ASPECT:NAME|Going Once, Going Twice
+Read the Signs			CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Trader Class Feature			KEY:Trader ~ Read the Signs					
+Sucker Born Every Minute	CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Trader Class Feature			KEY:Trader ~ Sucker Born Every Minute				
+Leadership				CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Trader Class Feature			KEY:Trader ~ Leadership																			AUTO:FEAT|Leadership
+Professional Courtesy		CATEGORY:Special Ability	TYPE:SpecialQuality.Class Feature.Trader Class Feature			KEY:Trader ~ Professional Courtesy				
+
+

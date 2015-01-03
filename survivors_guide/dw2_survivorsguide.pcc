@@ -78,24 +78,17 @@ WEAPONPROF:@/modern/wizards_of_the_coast/msrd/basics/modern_basics/modernbasics_
 
 ###DW2 Specific/Modified files
 ABILITYCATEGORY:dw2sg_ability_categories.lst
+ABILITY:dw2sg_abilities_class.lst
+ABILITY:dw2sg_abilities_race.lst
 
-ABILITY:dw2sg_abilities_backgrounds.lst
-ABILITY:dw2sg_abilities_occupations.lst
-ABILITY:dw2sg_abilities_defects.lst
-ABILITY:dw2sg_abilities_mutations.lst
-ABILITY:dw2sg_abilities_talents.lst
 
-RACE:dw2sg_races_human.lst
+RACE:dw2sg_races.lst
 
 CLASS:dw2sg_classes.lst
-CLASS:dw2sg_classes_npc.lst
-CLASS:dw2sg_classes_advanced.lst
-CLASS:dw2sg_classes_epic.lst
 
 SKILL:dw2sg_skills.lst
 
 FEAT:dw2sg_feats.lst
-FEAT:dw2sg_feats_mutations.lst
 FEAT:dw2sg_feats_hidden.lst
 
 LANGUAGE:dw2sg_languages.lst
@@ -116,6 +109,7 @@ EQUIPMENT:dw2sg_equip_weap_ranged_firearms.lst
 EQUIPMENT:dw2sg_equip_weap_ammo.lst
 EQUIPMOD:dw2sg_equipmods.lst
 
+ARMORPROF|dw2sg_profs_armor.lst
 WEAPONPROF:dw2sg_weaponprofs.lst
 
 #Hiding Equipment Types that control EQMODS
